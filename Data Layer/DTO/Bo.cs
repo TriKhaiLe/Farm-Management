@@ -8,28 +8,21 @@ namespace GUI_Project.Data_Layer.DTO
 {
     class Bo : VatNuoi
     {
-        float luongSua = 0;
-        int soCon = 0;
+        private static Random rand = new Random();
 
-        public override string Ten {
-            get { return "Cow"; }
+        public override double VatSua()
+        {
+            return rand.NextDouble() * 20; // 0 toi 20 lit
         }
 
-        public override string TiengKeu => throw new NotImplementedException();
-
-        public override float VatSua()
+        public override string Keu()
         {
-            throw new NotImplementedException();
+            return "Coww";
         }
 
-        public override void Keu()
+        public override void SinhCon()
         {
-            throw new NotImplementedException();
-        }
-
-        public override VatNuoi SinhCon()
-        {
-            throw new NotImplementedException();
+            Quantity += rand.Next(1, 4);
         }
     }
 

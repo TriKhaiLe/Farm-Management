@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("Bò");
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("Cừu");
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("Dê");
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Bò");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Cừu");
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Dê");
             this.listView1 = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
             this.colTen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -39,9 +39,9 @@
             this.colTiengKeu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnVatSua = new System.Windows.Forms.Button();
+            this.btnDe = new System.Windows.Forms.Button();
+            this.btnKeu = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -56,9 +56,9 @@
             this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem7,
-            listViewItem8,
-            listViewItem9});
+            listViewItem1,
+            listViewItem2,
+            listViewItem3});
             this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(377, 213);
@@ -97,9 +97,9 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnKeu);
+            this.panel1.Controls.Add(this.btnDe);
+            this.panel1.Controls.Add(this.btnVatSua);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 241);
             this.panel1.Name = "panel1";
@@ -116,36 +116,36 @@
             this.panel2.Size = new System.Drawing.Size(377, 213);
             this.panel2.TabIndex = 3;
             // 
-            // button1
+            // btnVatSua
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.Location = new System.Drawing.Point(299, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 43);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Vắt sữa";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnVatSua.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnVatSua.Location = new System.Drawing.Point(299, 3);
+            this.btnVatSua.Name = "btnVatSua";
+            this.btnVatSua.Size = new System.Drawing.Size(75, 43);
+            this.btnVatSua.TabIndex = 0;
+            this.btnVatSua.Text = "Vắt sữa";
+            this.btnVatSua.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnDe
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button2.Location = new System.Drawing.Point(224, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 43);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Đẻ";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnDe.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnDe.Location = new System.Drawing.Point(224, 3);
+            this.btnDe.Name = "btnDe";
+            this.btnDe.Size = new System.Drawing.Size(75, 43);
+            this.btnDe.TabIndex = 1;
+            this.btnDe.Text = "Đẻ";
+            this.btnDe.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnKeu
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button3.Location = new System.Drawing.Point(149, 3);
-            this.button3.Margin = new System.Windows.Forms.Padding(5);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 43);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Kêu";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnKeu.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnKeu.Location = new System.Drawing.Point(149, 3);
+            this.btnKeu.Margin = new System.Windows.Forms.Padding(5);
+            this.btnKeu.Name = "btnKeu";
+            this.btnKeu.Size = new System.Drawing.Size(75, 43);
+            this.btnKeu.TabIndex = 2;
+            this.btnKeu.Text = "Bỏ đói";
+            this.btnKeu.UseVisualStyleBackColor = true;
             // 
             // QLNongTrai
             // 
@@ -174,9 +174,9 @@
         private System.Windows.Forms.ColumnHeader colLuongSua;
         private System.Windows.Forms.ColumnHeader colTiengKeu;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnVatSua;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnKeu;
+        private System.Windows.Forms.Button btnDe;
     }
 }

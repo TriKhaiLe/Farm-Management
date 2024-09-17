@@ -8,12 +8,11 @@ namespace GUI_Project.Data_Layer.DTO
 {
     abstract class VatNuoi
     {
-        public abstract string Ten { get; }
-        public abstract string TiengKeu { get; }
-
-        public abstract void Keu();
-        public abstract float VatSua();
-        public abstract VatNuoi SinhCon();
+        public int Id { get; set; }
+        public int Quantity { get; set; }
+        public abstract string Keu();
+        public abstract double VatSua();
+        public abstract void SinhCon();
     }
 }
 
