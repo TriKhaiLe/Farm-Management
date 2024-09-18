@@ -1,4 +1,5 @@
 ﻿using GUI_Project.Business_Layer;
+using GUI_Project.Data_Layer.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,6 +41,10 @@ namespace GUI_Project
                 listView1.Items.Add(item);
             }
 
+            var lastItem = new ListViewItem("Tổng");
+            lastItem.SubItems.Add(bll.tongSL.ToString()); 
+            lastItem.SubItems.Add(bll.tongLitSua.ToString()); 
+            listView1.Items.Add(lastItem);
         }
 
         private void btnKeu_Click(object sender, EventArgs e)

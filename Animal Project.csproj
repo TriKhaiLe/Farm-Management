@@ -51,6 +51,8 @@
     <Compile Include="Data Layer\ConnectionManager.cs" />
     <Compile Include="Data Layer\DatabaseInitializer.cs" />
     <Compile Include="Data Layer\DTO\Bo.cs" />
+    <Compile Include="Data Layer\DTO\Cuu.cs" />
+    <Compile Include="Data Layer\DTO\De.cs" />
     <Compile Include="Data Layer\DTO\VatNuoi.cs" />
     <Compile Include="Data Layer\VatNuoiDAL.cs" />
     <Compile Include="Presentation Layer\Form1.cs">

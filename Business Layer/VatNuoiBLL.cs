@@ -16,6 +16,8 @@ namespace GUI_Project.Business_Layer
         public List<VatNuoi> dsVatNuoi = new List<VatNuoi>();
         ConnectionManager connectionManager = new ConnectionManager();
         public bool isDatabaseConnect = false;
+        public int tongSL = 0;
+        public double tongLitSua = 0;
 
         public VatNuoiBLL(string newConnStr)
         {
@@ -42,10 +44,10 @@ namespace GUI_Project.Business_Layer
                         vatNuoi = new Bo();
                         break;
                     case "Cuu":
-                        //livestock = new Cuu();
+                        vatNuoi = new Cuu();
                         break;
                     case "De":
-                        //livestock = new De();
+                        vatNuoi = new De();
                         break;
                 }
                 if (vatNuoi != null)
@@ -54,6 +56,8 @@ namespace GUI_Project.Business_Layer
                     vatNuoi.SoLuong = (int)row["SoLuong"];
                     vatNuoi.LuongSua = (double)row.Field<decimal>("LuongSua");
                     dsVatNuoi.Add(vatNuoi);
+                    tongSL += vatNuoi.SoLuong;
+                    tongLitSua += vatNuoi.LuongSua;
                 }
             }
         }
@@ -65,12 +69,12 @@ namespace GUI_Project.Business_Layer
             dt.Columns.Add("LoaiVat", typeof(string));
             dt.Columns.Add("SoLuong", typeof(int));
 
-            foreach (var livestock in dsVatNuoi)
+            foreach (var vatNuoi in dsVatNuoi)
             {
                 DataRow row = dt.NewRow();
-                row["Id"] = livestock.Id;
-                row["LoaiVat"] = livestock.GetType().Name;
-                row["SoLuong"] = livestock.SoLuong;
+                row["Id"] = vatNuoi.Id;
+                row["LoaiVat"] = vatNuoi.GetType().Name;
+                row["SoLuong"] = vatNuoi.SoLuong;
                 dt.Rows.Add(row);
             }
 
