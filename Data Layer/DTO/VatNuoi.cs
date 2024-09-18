@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace GUI_Project.Data_Layer.DTO
 {
-    abstract class VatNuoi
+    public abstract class VatNuoi
     {
         public int Id { get; set; }
-        public int Quantity { get; set; }
+        public int SoLuong { get; set; }
+        public double LuongSua { get; set; }
         public abstract string Keu();
-        public abstract double VatSua();
+        public abstract void VatSua();
         public abstract void SinhCon();
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI_Project.Business_Layer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,35 @@ namespace GUI_Project
 {
     public partial class QLNongTrai : Form
     {
+        public VatNuoiBLL bll = new VatNuoiBLL();
         public QLNongTrai()
         {
             InitializeComponent();
             listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            HienThiDuLieu();
+        }
+
+        private void HienThiDuLieu()
+        {
+            bll.LayDSVatNuoi();
+            listView1.Items.Clear();
+
+            foreach (var vatNuoi in bll.dsVatNuoi) 
+            {
+                // Create a new ListViewItem for each livestock
+                var item = new ListViewItem(vatNuoi.GetType().Name);
+                item.SubItems.Add(vatNuoi.SoLuong.ToString()); // Add quantity as a subitem
+                item.SubItems.Add(vatNuoi.LuongSua.ToString()); // Add type as a subitem
+
+                // Add the ListViewItem to the ListView
+                listView1.Items.Add(item);
+            }
+
+        }
+
+        private void btnKeu_Click(object sender, EventArgs e)
+        {
+
         }
     }     
 }

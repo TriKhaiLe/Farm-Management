@@ -10,19 +10,30 @@ namespace GUI_Project.Data_Layer.DTO
     {
         private static Random rand = new Random();
 
-        public override double VatSua()
+        public override void VatSua()
         {
-            return rand.NextDouble() * 20; // 0 toi 20 lit
+            for (int i = 0; i < SoLuong; i++)
+            {
+                LuongSua += rand.NextDouble() * 20;
+            }
         }
 
         public override string Keu()
         {
-            return "Coww";
+            string sound = "";
+            for (int i = 0; i < SoLuong; i++)
+            {
+                sound += "Coww ";
+            }
+            return sound;
         }
 
         public override void SinhCon()
         {
-            Quantity += rand.Next(1, 4);
+            for (int i = 0; i < SoLuong; i++)
+            {
+                SoLuong += rand.Next(1, 4);
+            }
         }
     }
 

@@ -46,8 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business Layer\VatNuoiBLL.cs" />
     <Compile Include="Data Layer\DTO\Bo.cs" />
     <Compile Include="Data Layer\DTO\VatNuoi.cs" />
+    <Compile Include="Data Layer\VatNuoiDAL.cs" />
     <Compile Include="Presentation Layer\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,7 +93,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Business Layer\" />
     <Folder Include="Data Layer\DAO\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
