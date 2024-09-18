@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QLNongTrai));
             this.listView1 = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
             this.colTen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colSoLuong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colLuongSua = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colTiengKeu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnVatSua = new System.Windows.Forms.Button();
@@ -44,10 +44,14 @@
             this.tbConnStr = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // listView1
@@ -55,25 +59,24 @@
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colTen,
             this.colSoLuong,
-            this.colLuongSua,
-            this.colTiengKeu});
+            this.colLuongSua});
             this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(377, 280);
+            this.listView1.Size = new System.Drawing.Size(377, 194);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             // 
             // label1
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(377, 28);
+            this.label1.Size = new System.Drawing.Size(377, 40);
             this.label1.TabIndex = 1;
             this.label1.Text = "Trang Trại Z";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -91,11 +94,6 @@
             // 
             this.colLuongSua.Text = "Lượng sữa";
             // 
-            // colTiengKeu
-            // 
-            this.colTiengKeu.Text = "Tiếng kêu";
-            this.colTiengKeu.Width = 142;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnKeu);
@@ -112,14 +110,15 @@
             // 
             this.panel2.Controls.Add(this.listView1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 28);
+            this.panel2.Location = new System.Drawing.Point(0, 40);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(377, 280);
+            this.panel2.Size = new System.Drawing.Size(377, 194);
             this.panel2.TabIndex = 3;
             // 
             // btnVatSua
             // 
             this.btnVatSua.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnVatSua.Enabled = false;
             this.btnVatSua.Location = new System.Drawing.Point(299, 3);
             this.btnVatSua.Name = "btnVatSua";
             this.btnVatSua.Size = new System.Drawing.Size(75, 42);
@@ -130,6 +129,7 @@
             // btnDe
             // 
             this.btnDe.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnDe.Enabled = false;
             this.btnDe.Location = new System.Drawing.Point(224, 3);
             this.btnDe.Name = "btnDe";
             this.btnDe.Size = new System.Drawing.Size(75, 42);
@@ -140,6 +140,7 @@
             // btnKeu
             // 
             this.btnKeu.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnKeu.Enabled = false;
             this.btnKeu.Location = new System.Drawing.Point(149, 3);
             this.btnKeu.Margin = new System.Windows.Forms.Padding(5);
             this.btnKeu.Name = "btnKeu";
@@ -203,16 +204,38 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Connection String";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(337, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Padding = new System.Windows.Forms.Padding(10);
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.pictureBox1);
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(377, 40);
+            this.panel5.TabIndex = 7;
+            // 
             // QLNongTrai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(377, 356);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "QLNongTrai";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -223,6 +246,8 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -234,7 +259,6 @@
         private System.Windows.Forms.ColumnHeader colTen;
         private System.Windows.Forms.ColumnHeader colSoLuong;
         private System.Windows.Forms.ColumnHeader colLuongSua;
-        private System.Windows.Forms.ColumnHeader colTiengKeu;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnVatSua;
         private System.Windows.Forms.Panel panel2;
@@ -245,5 +269,7 @@
         private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel5;
     }
 }

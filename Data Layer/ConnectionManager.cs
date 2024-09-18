@@ -34,7 +34,7 @@ namespace GUI_Project.Data_Layer
                     return true;
                 }
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
                 Console.WriteLine("Connection failed: " + ex.Message);
                 return false;

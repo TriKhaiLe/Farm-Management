@@ -15,6 +15,7 @@ namespace GUI_Project.Business_Layer
         private VatNuoiDAL dal;
         public List<VatNuoi> dsVatNuoi = new List<VatNuoi>();
         ConnectionManager connectionManager = new ConnectionManager();
+        public bool isDatabaseConnect = false;
 
         public VatNuoiBLL(string newConnStr)
         {
@@ -23,6 +24,7 @@ namespace GUI_Project.Business_Layer
                 MessageBox.Show("Ket noi That Bai");
                 return;
             }
+            isDatabaseConnect = true;
             connectionManager.SaveConnectionString(newConnStr);
             dal = new VatNuoiDAL(newConnStr);
         }

@@ -44,15 +44,21 @@ namespace GUI_Project
 
         private void btnKeu_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show(bll.BoDoi());
         }
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
             string newConnStr = tbConnStr.Text.Trim();
             bll = new VatNuoiBLL(newConnStr); // include check valid connection string
-            bll.KhoiTaoCSDL();  // BLL handles database initialization
-            HienThiDuLieu();  // Load livestock data into the UI
+            if (bll.isDatabaseConnect)
+            {
+                bll.KhoiTaoCSDL();  // BLL handles database initialization
+                HienThiDuLieu();  // Load livestock data into the UI
+                btnKeu.Enabled = true;
+                btnDe.Enabled = true;
+                btnVatSua.Enabled = true;
+            }
         }
     }     
 }
