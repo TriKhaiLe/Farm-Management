@@ -12,8 +12,20 @@ namespace GUI_Project.Business_Layer
 {
     public class VatNuoiBLL
     {
-        private VatNuoiDAL dal = new VatNuoiDAL();
+        private VatNuoiDAL dal;
         public List<VatNuoi> dsVatNuoi = new List<VatNuoi>();
+        ConnectionManager connectionManager = new ConnectionManager();
+
+        public VatNuoiBLL(string newConnStr)
+        {
+            if (!connectionManager.IsConnectionStringValid(newConnStr))
+            {
+                MessageBox.Show("Ket noi That Bai");
+                return;
+            }
+            connectionManager.SaveConnectionString(newConnStr);
+            dal = new VatNuoiDAL(newConnStr);
+        }
 
         public void LayDSVatNuoi()
         {
@@ -38,7 +50,7 @@ namespace GUI_Project.Business_Layer
                 {
                     vatNuoi.Id = (int)row["Id"];
                     vatNuoi.SoLuong = (int)row["SoLuong"];
-                    vatNuoi.LuongSua = (double)row["LuongSua"];
+                    vatNuoi.LuongSua = (double)row.Field<decimal>("LuongSua");
                     dsVatNuoi.Add(vatNuoi);
                 }
             }
@@ -90,5 +102,20 @@ namespace GUI_Project.Business_Layer
 
         }
 
+        public void KhoiTaoCSDL()
+        {
+            try
+            {
+                string connStr = connectionManager.GetCurrentConnectionString();
+                string dbName = connectionManager.GetDatabaseName(connStr);
+                var dbInitializer = new DatabaseInitializer(connStr, dbName);
+                dbInitializer.InitializeDatabase(); // khoi tao table neu chua ton tai
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

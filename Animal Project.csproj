@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -47,6 +48,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business Layer\VatNuoiBLL.cs" />
+    <Compile Include="Data Layer\ConnectionManager.cs" />
+    <Compile Include="Data Layer\DatabaseInitializer.cs" />
     <Compile Include="Data Layer\DTO\Bo.cs" />
     <Compile Include="Data Layer\DTO\VatNuoi.cs" />
     <Compile Include="Data Layer\VatNuoiDAL.cs" />

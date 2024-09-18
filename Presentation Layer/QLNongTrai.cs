@@ -13,12 +13,15 @@ namespace GUI_Project
 {
     public partial class QLNongTrai : Form
     {
-        public VatNuoiBLL bll = new VatNuoiBLL();
+        public VatNuoiBLL bll;
         public QLNongTrai()
         {
             InitializeComponent();
             listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-            HienThiDuLieu();
+        }
+
+        private void InitializeApplication()
+        {
         }
 
         private void HienThiDuLieu()
@@ -42,6 +45,14 @@ namespace GUI_Project
         private void btnKeu_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnConnect_Click(object sender, EventArgs e)
+        {
+            string newConnStr = tbConnStr.Text.Trim();
+            bll = new VatNuoiBLL(newConnStr); // include check valid connection string
+            bll.KhoiTaoCSDL();  // BLL handles database initialization
+            HienThiDuLieu();  // Load livestock data into the UI
         }
     }     
 }

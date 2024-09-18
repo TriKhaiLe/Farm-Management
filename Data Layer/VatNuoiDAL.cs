@@ -12,6 +12,11 @@ namespace GUI_Project.Data_Layer
     {
         private string connectionString = "your_connection_string_here";
 
+        public VatNuoiDAL(string connStr)
+        {
+            connectionString = connStr;
+        }
+
         public DataTable LayDSVatNuoi()
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
