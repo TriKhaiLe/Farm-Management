@@ -67,5 +67,11 @@ namespace GUI_Project
             bll.SinhSan();
             HienThiDuLieu();
         }
+
+        private void btnVatSua_Click(object sender, EventArgs e)
+        {
+            bll.VatSua();
+            HienThiDuLieu();
+        }
     }     
 }

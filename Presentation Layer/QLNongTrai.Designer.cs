@@ -64,7 +64,7 @@
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(377, 194);
+            this.listView1.Size = new System.Drawing.Size(377, 200);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -112,7 +112,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 40);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(377, 194);
+            this.panel2.Size = new System.Drawing.Size(377, 200);
             this.panel2.TabIndex = 3;
             // 
             // btnVatSua
@@ -125,6 +125,7 @@
             this.btnVatSua.TabIndex = 0;
             this.btnVatSua.Text = "Vắt sữa";
             this.btnVatSua.UseVisualStyleBackColor = true;
+            this.btnVatSua.Click += new System.EventHandler(this.btnVatSua_Click);
             // 
             // btnDe
             // 
@@ -189,10 +190,10 @@
             // 
             this.panel4.Controls.Add(this.label2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 234);
+            this.panel4.Location = new System.Drawing.Point(0, 240);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(3);
-            this.panel4.Size = new System.Drawing.Size(377, 30);
+            this.panel4.Size = new System.Drawing.Size(377, 24);
             this.panel4.TabIndex = 5;
             // 
             // label2
@@ -201,9 +202,9 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Location = new System.Drawing.Point(3, 3);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 16);
+            this.label2.Size = new System.Drawing.Size(114, 16);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Connection String";
+            this.label2.Text = "Connection String:";
             // 
             // pictureBox1
             // 

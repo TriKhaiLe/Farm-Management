@@ -124,5 +124,15 @@ namespace GUI_Project.Business_Layer
                 MessageBox.Show(ex.Message);
             }
         }
+
+        internal void VatSua()
+        {
+            foreach (var vn in dsVatNuoi)
+            {
+                vn.VatSua();
+            }
+
+            LuuDSVatNuoi();
+        }
     }
 }
