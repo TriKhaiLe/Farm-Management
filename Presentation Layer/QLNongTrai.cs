@@ -73,5 +73,18 @@ namespace GUI_Project
             bll.VatSua();
             HienThiDuLieu();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("B1: Tạo DB mới hoặc DB có sẵn từ SQLServer");
+            sb.Append(Environment.NewLine);
+            sb.Append("B2: Lấy connection string (bằng Server Explorer trong Visual Studio)");
+            sb.Append(Environment.NewLine);
+            sb.Append("Connection string mẫu: Data Source=DESKTOP-QC195PQ\\SQLEXPRESS;Initial Catalog=NongTraiDB;Integrated Security=True;Encrypt=False");
+            sb.Append(Environment.NewLine);
+            sb.Append("B3: Kết nối và sử dụng các chức năng");
+            MessageBox.Show(sb.ToString(), "Huong dan su dung");
+        }
     }     
 }
