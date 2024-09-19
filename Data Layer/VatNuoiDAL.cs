@@ -32,9 +32,22 @@ namespace GUI_Project.Data_Layer
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM VatNuoi", conn);
-                SqlCommandBuilder builder = new SqlCommandBuilder(da);
-                da.Update(dt);
+                conn.Open();
+
+                // Step 1: Delete all existing records
+                using (SqlCommand deleteCommand = new SqlCommand("DELETE FROM VatNuoi", conn))
+                {
+                    deleteCommand.ExecuteNonQuery();
+                }
+
+                // Step 2: Re-insert the new data from the DataTable
+                using (SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM VatNuoi", conn))
+                {
+                    SqlCommandBuilder builder = new SqlCommandBuilder(da);
+
+                    // This will insert only the rows present in the DataTable after the deletion
+                    da.Update(dt);
+                }
             }
         }
 

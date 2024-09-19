@@ -33,6 +33,9 @@ namespace GUI_Project.Business_Layer
 
         public void LayDSVatNuoi()
         {
+            dsVatNuoi.Clear();
+            tongSL = 0;
+            tongLitSua = 0;
             DataTable dt = dal.LayDSVatNuoi();
             foreach (DataRow row in dt.Rows)
             {
@@ -52,7 +55,6 @@ namespace GUI_Project.Business_Layer
                 }
                 if (vatNuoi != null)
                 {
-                    vatNuoi.Id = (int)row["Id"];
                     vatNuoi.SoLuong = (int)row["SoLuong"];
                     vatNuoi.LuongSua = (double)row.Field<decimal>("LuongSua");
                     dsVatNuoi.Add(vatNuoi);
@@ -68,13 +70,14 @@ namespace GUI_Project.Business_Layer
             dt.Columns.Add("Id", typeof(int));
             dt.Columns.Add("LoaiVat", typeof(string));
             dt.Columns.Add("SoLuong", typeof(int));
+            dt.Columns.Add("LuongSua", typeof(decimal));
 
             foreach (var vatNuoi in dsVatNuoi)
             {
                 DataRow row = dt.NewRow();
-                row["Id"] = vatNuoi.Id;
                 row["LoaiVat"] = vatNuoi.GetType().Name;
                 row["SoLuong"] = vatNuoi.SoLuong;
+                row["LuongSua"] = vatNuoi.LuongSua;
                 dt.Rows.Add(row);
             }
 
@@ -96,16 +99,14 @@ namespace GUI_Project.Business_Layer
         //    return (cowCount, sheepCount, goatCount, totalMilk);
         //}
 
-        public Dictionary<string, int> SinhSan()
+        public void SinhSan()
         {
-            Dictionary<string, int> slMoiLoai = new Dictionary<string, int>();
             foreach (var vn in dsVatNuoi)
             {
                 vn.SinhCon();
-                slMoiLoai.Add(vn.GetType().Name, vn.SoLuong);
             }
-            return slMoiLoai;
 
+            LuuDSVatNuoi();
         }
 
         public void KhoiTaoCSDL()

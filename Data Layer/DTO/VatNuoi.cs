@@ -8,9 +8,10 @@ namespace GUI_Project.Data_Layer.DTO
 {
     public abstract class VatNuoi
     {
-        public int Id { get; set; }
         public int SoLuong { get; set; }
         public double LuongSua { get; set; }
+        internal static Random rand = new Random();
+
         public abstract string Keu();
         public abstract void VatSua();
         public abstract void SinhCon();

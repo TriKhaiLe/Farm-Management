@@ -21,10 +21,6 @@ namespace GUI_Project
             listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
-        private void InitializeApplication()
-        {
-        }
-
         private void HienThiDuLieu()
         {
             bll.LayDSVatNuoi();
@@ -64,6 +60,12 @@ namespace GUI_Project
                 btnDe.Enabled = true;
                 btnVatSua.Enabled = true;
             }
+        }
+
+        private void btnDe_Click(object sender, EventArgs e)
+        {
+            bll.SinhSan();
+            HienThiDuLieu();
         }
     }     
 }

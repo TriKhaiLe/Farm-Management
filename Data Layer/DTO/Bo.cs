@@ -8,8 +8,6 @@ namespace GUI_Project.Data_Layer.DTO
 {
     class Bo : VatNuoi
     {
-        private static Random rand = new Random();
-
         public override void VatSua()
         {
             for (int i = 0; i < SoLuong; i++)
@@ -30,7 +28,8 @@ namespace GUI_Project.Data_Layer.DTO
 
         public override void SinhCon()
         {
-            for (int i = 0; i < SoLuong; i++)
+            int slBanDau = SoLuong;
+            for (int i = 0; i < slBanDau; i++)
             {
                 SoLuong += rand.Next(1, 4);
             }

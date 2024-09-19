@@ -107,7 +107,6 @@ namespace GUI_Project.Data_Layer
             string createTableQuery = $@"
             USE {dbName};
             CREATE TABLE VatNuoi (
-                Id INT PRIMARY KEY IDENTITY(1,1),
                 LoaiVat NVARCHAR(50),
                 SoLuong INT,
                 LuongSua DECIMAL

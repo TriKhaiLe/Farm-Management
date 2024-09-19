@@ -136,6 +136,7 @@
             this.btnDe.TabIndex = 1;
             this.btnDe.Text = "Đẻ";
             this.btnDe.UseVisualStyleBackColor = true;
+            this.btnDe.Click += new System.EventHandler(this.btnDe_Click);
             // 
             // btnKeu
             // 
